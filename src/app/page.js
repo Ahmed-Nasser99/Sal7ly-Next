@@ -1,5 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import logo from "../../public/assets/Imgs/Logo.png";
+import homeBackground from "../../public/assets/Imgs/appliancesGroupHomeBackground.png";
+
 import {
   Dialog,
   DialogContent,
@@ -26,10 +29,12 @@ import { testimonialsData } from "../components/Testimonials";
 import BrandsSwiper from "@/components/BrandsSwiper";
 import TestimonialsSwiper from "@/components/TestimonialsSwiper";
 import ServicesSwiper from "@/components/ServicesSwiper";
+import arValues from "../../public/locales/ar/translation.json";
 
+const t = (key) => {
+  return arValues[key] || key; // Return the Arabic value or the key if not found
+};
 export default function MainComponent() {
-  const t = (key) => key;
-
   const phoneNumber = "+201102941029";
   const displayPhoneNumber = "01102941029";
   const email = "ahmednasserr86@gmail.com";
@@ -41,7 +46,7 @@ export default function MainComponent() {
         <Link href="#" className="flex items-center gap-2">
           <div className="w-[150px] h-[90px] pt-2">
             <Image
-              src="/public/assets/Imgs/Logo.png"
+              src={logo}
               alt="صلحلي Sal7ly"
               className="w-full h-full"
               width={150}
@@ -69,7 +74,7 @@ export default function MainComponent() {
       <section className="w-full py-16 md:pt-10 md:pb-6 lg:pt-16 lg:pb-8 h-screen">
         <div className="container mx-auto px-2 md:px-4 grid gap-3 lg:grid-cols-2 xl:grid-cols-2 w-full h-full">
           <Image
-            src="/public/assets/Imgs/appliancesGroupHomeBackground.png"
+            src={homeBackground}
             alt="صيانة جميع الاجهزة الكهربائة"
             width={300}
             height={500}
@@ -143,29 +148,7 @@ export default function MainComponent() {
                 variant="h2"
                 className="text-3xl font-bold tracking-tighter sm:text-5xl"
               >
-                {t("testimonials")}
-              </Typography>
-              <Typography
-                variant="body1"
-                className="text-muted-foreground md:text-xl lg:text-base xl:text-xl"
-              >
-                {t("testimonials_description")}
-              </Typography>
-            </div>
-          </div>
-          <TestimonialsSwiper />
-        </div>
-      </section>
-
-      <section className="w-full py-12 md:py-24 lg:py-32 max-w-[95vw] mx-auto">
-        <div className="container mx-auto px-4 md:px-6 space-y-12">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <Typography
-                variant="h2"
-                className="text-3xl font-bold tracking-tighter sm:text-5xl"
-              >
-                {t("our_brands")}
+                {t("trusted_brands")}
               </Typography>
               <Typography
                 variant="body1"
@@ -178,21 +161,33 @@ export default function MainComponent() {
           <BrandsSwiper />
         </div>
       </section>
+      <section className="w-full py-12 md:py-24 lg:py-32 max-w-[95vw] mx-auto">
+        <div className="container mx-auto px-4 md:px-6 space-y-12">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2">
+              <Typography
+                variant="h2"
+                className="text-3xl font-bold tracking-tighter sm:text-5xl"
+              >
+                {t("customer_feedback")}
+              </Typography>
+              <Typography
+                variant="body1"
+                className="text-muted-foreground md:text-xl lg:text-base xl:text-xl"
+              >
+                {t("feedback_description")}
+              </Typography>
+            </div>
+          </div>
+          <TestimonialsSwiper />
+        </div>
+      </section>
 
-      <footer className="w-full py-6 bg-background">
-        <div className="container mx-auto px-4 flex flex-col items-center justify-center space-y-2">
-          <Typography
-            variant="body2"
-            className="text-center text-muted-foreground"
-          >
-            &copy; {new Date().getFullYear()} صلحلي Sal7ly.{" "}
+      <footer className="w-full py-4 bg-gray-800 text-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <Typography variant="body2" className="text-center">
+            © {new Date().getFullYear()} {t("company_name")}.{" "}
             {t("all_rights_reserved")}.
-          </Typography>
-          <Typography
-            variant="body2"
-            className="text-center text-muted-foreground"
-          >
-            {t("footer_text")}
           </Typography>
         </div>
       </footer>

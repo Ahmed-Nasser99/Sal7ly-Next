@@ -1,46 +1,62 @@
+import toshibaLogo from "../../public/assets/Imgs/BrandsLogo/Toshiba.png";
+import SamsungLogo from "../../public/assets/Imgs/BrandsLogo/Samsung.png";
+import LgLogo from "../../public/assets/Imgs/BrandsLogo/Lg.png";
+import BoschLogo from "../../public/assets/Imgs/BrandsLogo/Bosch.png";
+import SharpLogo from "../../public/assets/Imgs/BrandsLogo/Sharp.png";
+import AristonLogo from "../../public/assets/Imgs/BrandsLogo/Ariston.png";
+import ZanussiLogo from "../../public/assets/Imgs/BrandsLogo/Zanussi.png";
+import UnionaireLogo from "../../public/assets/Imgs/BrandsLogo/Unionaire.png";
+import CarrierLogo from "../../public/assets/Imgs/BrandsLogo/Carrier.png";
+import BekoLogo from "../../public/assets/Imgs/BrandsLogo/Beko.png";
+import HooverLogo from "../../public/assets/Imgs/BrandsLogo/Hoover.png";
+  
 export var brandData = [
   {
     name: "Toshiba",
-    logo: "/public/assets/Imgs/BrandsLogo/Toshiba.png",
+    logo: toshibaLogo,
   },
   {
     name: "Unionaire",
-    logo: "/public/assets/Imgs/BrandsLogo/Unionaire.png",
+    logo: UnionaireLogo,
   },
   {
     name: "Carrier",
-    logo: "/public/assets/Imgs/BrandsLogo/Carrier.png",
+    logo: CarrierLogo,
   },
   {
     name: "Zanussi",
-    logo: "/public/assets/Imgs/BrandsLogo/Zanussi.png",
+    logo: ZanussiLogo,
   },
   {
     name: "Samsung",
-    logo: "/public/assets/Imgs/BrandsLogo/Samsung.png",
+    logo: SamsungLogo,
   },
   {
     name: "LG",
-    logo: "/public/assets/Imgs/BrandsLogo/Lg.png",
+    logo: LgLogo,
   },
   {
     name: "Bosch",
-    logo: "/public/assets/Imgs/BrandsLogo/Bosch.png",
+    logo: BoschLogo,
   },
   {
     name: "Sharp",
-    logo: "/public/assets/Imgs/BrandsLogo/Sharp.png",
+    logo: SharpLogo,
   },
   {
     name: "Ariston",
-    logo: "/public/assets/Imgs/BrandsLogo/Ariston.png",
+    logo: AristonLogo,
+  },
+  {
+    name: "Zanussi",
+    logo: ZanussiLogo,
   },
   {
     name: "Beko",
-    logo: "/public/assets/Imgs/BrandsLogo/Beko.png",
+    logo: BekoLogo,
   },
   {
     name: "Hoover",
-    logo: "/public/assets/Imgs/BrandsLogo/Hoover.png",
+    logo: HooverLogo,
   },
 ];

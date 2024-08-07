@@ -3,11 +3,17 @@ import React from "react";
 import { brandData } from "./Brands";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css"; // Import styles
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Card, CardContent, Typography } from "@mui/material";
+import Image from "next/image"; // Import Next.js Image component
+import arValues from "../../public/locales/ar/translation.json";
+
+const t = (key) => {
+  return arValues[key] || key; // Return the Arabic value or the key if not found
+};
 
 export default function BrandsSwiper() {
   const brands = brandData;
-  const t = (key) => key;
+
   return (
     <div>
       <Splide
@@ -37,12 +43,14 @@ export default function BrandsSwiper() {
         {brands.map((brand, index) => (
           <SplideSlide key={index}>
             <Card className="min-h-[250px]">
-              <CardMedia
-                component="img"
-                height="150"
-                image={brand.logo}
-                alt={t(brand.name)}
-              />
+              <div className="relative h-36 w-full">
+                <Image
+                  src={brand.logo} // Use the src prop for the image source
+                  alt={t(brand.name)}
+                  layout="fill" // Use layout fill to make the image responsive
+                  objectFit="contain" // Adjust object fit to contain
+                />
+              </div>
               <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
                 <Typography variant="h6" className="text-lg font-bold">
                   {t(brand.name)}

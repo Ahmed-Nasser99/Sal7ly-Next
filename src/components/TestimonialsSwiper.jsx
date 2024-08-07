@@ -5,10 +5,14 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css"; // Import styles
 import { Avatar, Card, CardContent, Typography } from "@mui/material";
 import { Star } from "@mui/icons-material";
+import arValues from "../../public/locales/ar/translation.json";
+
+const t = (key) => {
+  return arValues[key] || key; // Return the Arabic value or the key if not found
+};
 
 export default function TestimonialsSwiper() {
   const testimonials = testimonialsData;
-  const t = (key) => key;
 
   return (
     <div>
