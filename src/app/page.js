@@ -182,7 +182,111 @@ export default function MainComponent() {
           <TestimonialsSwiper />
         </div>
       </section>
+      <section className="container mx-auto px-4 py-12 md:py-16 lg:py-20">
+        <div className="my-5">
+          <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+            {t("contact_us")}
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-[95vw] overflow-hidden">
+          <div className="flex justify-center lg:justify-start">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d693.8995184123253!2d31.17989613369147!3d30.059597478605692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1722352321125!5m2!1sar!2seg"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
+                <LocalPhoneIcon
+                  style={{ width: "2rem", height: "2rem" }}
+                  className="text-green-500"
+                />
+                <Typography variant="h6" className="text-lg font-bold">
+                  {t("contact_us")}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground text-center"
+                >
+                  <a href={`tel:${phoneNumber}`} className="font-bold">
+                    {displayPhoneNumber}
+                  </a>
+                </Typography>
+              </CardContent>
+            </Card>
 
+            <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
+                <Email
+                  style={{ width: "2rem", height: "2rem" }}
+                  className="text-[#09c]"
+                />
+                <Typography variant="h6" className="text-lg font-bold">
+                  {t("email_us")}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground text-center"
+                >
+                  <a href={`mailto:${email}`} className="font-bold">
+                    {email}
+                  </a>
+                </Typography>
+              </CardContent>
+            </Card>
+            <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
+                <WhatsApp
+                  style={{ width: "2rem", height: "2rem" }}
+                  className="text-green-500"
+                />
+                <Typography variant="h6" className="text-lg font-bold">
+                  {t("whatsapp")}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground text-center"
+                >
+                  <a
+                    href={`https://wa.me/${phoneNumber}`}
+                    className="font-bold"
+                  >
+                    {displayPhoneNumber}
+                  </a>
+                </Typography>
+              </CardContent>
+            </Card>
+            <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
+                <LocationCity
+                  style={{ width: "2rem", height: "2rem" }}
+                  className="text-[#09c]"
+                />
+                <Typography variant="h6" className="text-lg font-bold">
+                  {t("our_location")}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground text-center"
+                >
+                  <a
+                    href={`https://maps.app.goo.gl/t6ogR3DfGoEo459i7`}
+                    className="font-bold"
+                  >
+                    {location}
+                  </a>
+                </Typography>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
       <footer className="w-full py-4 bg-gray-800 text-white">
         <div className="container mx-auto px-4 md:px-6">
           <Typography variant="body2" className="text-center">
