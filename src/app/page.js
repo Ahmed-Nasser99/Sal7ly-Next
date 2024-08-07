@@ -76,14 +76,14 @@ export default function MainComponent() {
           <Image
             src={homeBackground}
             alt="صيانة جميع الاجهزة الكهربائة"
-            width={300}
+            width
             height={500}
             className="mx-auto aspect-video overflow-hidden rounded-xl object-bottom sm:w-full lg:order-last lg:aspect-square bg-gray-400 h-full"
           />
           <div className="flex flex-col justify-center space-y-4">
             <div className="space-y-2">
               <Typography
-                variant="p"
+                variant="h1"
                 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl"
               >
                 {t("main_title")}

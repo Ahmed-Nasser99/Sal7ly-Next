@@ -39,25 +39,21 @@ export default function TestimonialsSwiper() {
       >
         {testimonials.map((testimonial, index) => (
           <SplideSlide key={index}>
-            <Card className="min-h-[250px]">
-              <CardContent className="flex flex-col items-center justify-center gap-4 p-6">
-                <Typography variant="h6" className="text-lg font-bold">
-                  {t(testimonial.name)}
-                </Typography>
-                <Avatar
-                  src={testimonial.photo}
-                  alt={t(testimonial.name)}
-                  className="w-24 h-24 rounded-full"
-                />
-                <Typography variant="body2">
-                  {t(testimonial.feedback)}
-                </Typography>
-                <div className="flex gap-1">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="text-yellow-500" />
-                  ))}
+            <Card className="p-6 border rounded-lg shadow-lg bg-white min-h-[180px]">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="font-semibold text-lg">{testimonial.name}</div>
+                <div className="text-sm text-muted-foreground">
+                  {testimonial.title}
                 </div>
-              </CardContent>
+              </div>
+              <blockquote className="text-sm leading-relaxed italic text-gray-600">
+                {testimonial.review}
+              </blockquote>
+              <div className="flex items-center gap-1 mt-2 text-xs font-semibold text-yellow-500 mx-auto">
+                {Array.from({ length: testimonial.rating }, (_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-current" />
+                ))}
+              </div>
             </Card>
           </SplideSlide>
         ))}
