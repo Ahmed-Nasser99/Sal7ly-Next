@@ -1,8 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import logo from "../../public/assets/Imgs/Logo.png";
 import homeBackground from "../../public/assets/Imgs/appliancesGroupHomeBackground.png";
-
+import logo from "../../public/assets/Imgs/Logo.png";
 import {
   Dialog,
   DialogContent,
@@ -30,6 +29,7 @@ import BrandsSwiper from "@/components/BrandsSwiper";
 import TestimonialsSwiper from "@/components/TestimonialsSwiper";
 import ServicesSwiper from "@/components/ServicesSwiper";
 import arValues from "../../public/locales/ar/translation.json";
+import Navbar from "@/components/Navbar";
 
 const t = (key) => {
   return arValues[key] || key; // Return the Arabic value or the key if not found
@@ -42,35 +42,12 @@ export default function MainComponent() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="px-4 py-4 lg:px-6 h-14 flex items-center justify-between w-[95%] mx-auto fixed top-0 left-0 right-0 z-50 rounded-b-lg bg-background shadow-md overflow-hidden">
-        <Link href="#" className="flex items-center gap-2">
-          <div className="w-[150px] h-[90px] pt-2">
-            <Image
-              src={logo}
-              alt="صلحلي Sal7ly"
-              className="w-full h-full"
-              width={150}
-              height={90}
-            />
-          </div>
-        </Link>
-        <div className="flex gap-4 items-center">
-          <div className="flex items-center gap-4">
-            <a href={`tel:${phoneNumber}`} className="flex items-center gap-1">
-              <Phone className="w-5 h-5 text-green-500" />
-              <span className="hidden sm:inline">{displayPhoneNumber}</span>
-            </a>
-            <Link
-              href={`https://wa.me/${phoneNumber}`}
-              className="flex items-center gap-3"
-            >
-              <WhatsApp className="w-5 h-5 text-green-500" />
-              <span className="hidden sm:inline">{t("whatsapp")}</span>
-            </Link>
-          </div>
-        </div>
-      </header>
-
+      <Navbar
+        logo={logo}
+        logoTitle={"صلحلي_sal7ly"}
+        PhoneNmberTitle="الخط الساخن للصيانة المنزلية"
+        whatsAppTitle="رقم الواتساب للصيانة المنزلية"
+      />
       <section className="w-full py-16 md:pt-10 md:pb-6 lg:pt-16 lg:pb-8 h-screen">
         <div className="container mx-auto px-2 md:px-4 grid gap-3 lg:grid-cols-2 xl:grid-cols-2 w-full h-full">
           <Image
