@@ -43,30 +43,32 @@ const SharpMaintenance = () => {
       />
       <section className="w-full py-16 md:pt-10 md:pb-6 lg:pt-16 lg:pb-8 h-screen">
         <div className="container mx-auto px-2 md:px-4 w-full h-full relative">
-          <div className="mx-auto aspect-video overflow-hidden rounded-xl object-bottom sm:w-full lg:order-last relative lg:aspect-square bg-gray-400 h-full">
+          <div className="mx-auto aspect-video overflow-hidden rounded-xl object-bottom sm:w-full w-[100%] lg:order-last relative lg:aspect-square bg-gray-400 h-full">
             <div className="relative w-full h-full">
               <Image
                 src="/assets/Imgs/Sharp/sharpBg.jpg"
                 alt="صيانة شارب"
                 layout="fill"
-                objectFit="cover"
                 className="w-[100%] h-[100%]"
               />
+              <div className="absolute top-0 left-0 right-0 bottom-0 w-[100%] h-[100%] bg-[#0003]"></div>
             </div>
           </div>
-          <div className="flex flex-col justify-center space-y-4 absolute top-[50%] w-[100%] text-center">
+          <div className="flex flex-col justify-center space-y-4 absolute top-[50%] w-[100%] text-center text-white">
             <div className="space-y-2">
               <Typography
                 variant="h1"
                 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl"
               >
-                {t("main_title")}
+                صيانة أعطال شارب فى مصر
               </Typography>
               <Typography
                 variant="p"
                 className="max-w-[600px] text-muted-foreground md:text-xl"
               >
-                {t("main_description")}
+                نقدم خدمات صيانة متميزة لجميع أجهزة شارب، بما في ذلك الثلاجات
+                والتكييفات والغسالات. فريقنا من الخبراء مستعد لحل جميع مشاكل
+                أجهزتكم بكفاءة عالية.
               </Typography>
             </div>
             <div className="flex flex-col justify-center gap-2 sm:flex-row">
