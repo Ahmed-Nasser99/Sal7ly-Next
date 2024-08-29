@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
         <link
           rel="icon"
           type="image/svg+xml"
-          href="../../public/assets/Imgs/Logo.png"
+          href="/assets/Imgs/Logo.png"
           width="30"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,8 +22,15 @@ export default function RootLayout({ children }) {
         <meta name="robots" content="index, follow" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="Arabic" />
-
-        <title>Sal7ly | صلحلي</title>
+        <title>صيانة شارب - خدمات الصيانة الموثوقة لأجهزة شارب في مصر</title>
+        <meta
+          name="description"
+          content="خدمات صيانة موثوقة لجميع أجهزة شارب في مصر. نقدم صيانة للثلاجات والتكييفات والغسالات بأيدي خبراء متخصصين. اتصل بنا على 01102941029."
+        />
+        <meta
+          name="keywords"
+          content="صيانة شارب, صيانة ثلاجات شارب, صيانة تكييف شارب, صيانة غسالات شارب, رقم صيانة شارب"
+        />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
