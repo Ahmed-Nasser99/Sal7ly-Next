@@ -1,131 +1,168 @@
-import Navbar from "@/components/Navbar";
 import React from "react";
-import sharpBg from "../../../public/assets/Imgs/Sharp/sharpBg.jpg";
-import sharpLogo from "../../../public/assets/Imgs/Sharp/logoSharp.png";
+import Head from "next/head";
+import Image from "next/image";
+import {
+  Typography,
+  Container,
+  Box,
+  List,
+  ListItem,
+  ListItemText,
+  Button,
+} from "@mui/material";
+import { LocalPhone as LocalPhoneIcon, WhatsApp } from "@mui/icons-material";
+import Navbar from "@/components/Navbar";
+import arValues from "../../../public/locales/ar/translation.json";
 
-
-
-
-
-
-
-
-
+const t = (key) => {
+  return arValues[key] || key; // Return the Arabic value or the key if not found
+};
 
 const SharpMaintenance = () => {
+  const phoneNumber = "+201102941029";
+  const displayPhoneNumber = "01102941029";
   return (
     <>
+      <Head>
+        <title>صيانة شارب - خدمات الصيانة الموثوقة لأجهزة شارب في مصر</title>
+        <meta
+          name="description"
+          content="خدمات صيانة موثوقة لجميع أجهزة شارب في مصر. نقدم صيانة للثلاجات والتكييفات والغسالات بأيدي خبراء متخصصين. اتصل بنا على 01102941029."
+        />
+        <meta
+          name="keywords"
+          content="صيانة شارب, صيانة ثلاجات شارب, صيانة تكييف شارب, صيانة غسالات شارب, رقم صيانة شارب"
+        />
+      </Head>
+
       <Navbar
-        logo={sharpLogo}
-        logoTitle={"صيانة شارب"}
-        PhoneNmberTitle={"رقم صيانة شارب"}
-        whatsAppTitle={"هاتف صيانة شارب"}
+        logo="/assets/Imgs/Sharp/logoSharp.png"
+        logoTitle="صيانة شارب"
+        PhoneNmberTitle="رقم صيانة شارب"
+        whatsAppTitle="هاتف صيانة شارب"
       />
-      <main
-        id="maincontent"
-        className="page-main-full-width py-16 md:pt-10 md:pb-6 lg:pt-16 lg:pb-8"
-      >
-        <a id="contentarea" tabIndex="-1"></a>
-
-        {/* Main Page Title */}
-        <div className="page-title-wrapper">
-          <h1 className="page-title">
-            <span className="base" data-ui-id="page-title-wrapper">
-              صيانة أعطال شارب فى مصر
-            </span>
-          </h1>
+      <section className="w-full py-16 md:pt-10 md:pb-6 lg:pt-16 lg:pb-8 h-screen">
+        <div className="container mx-auto px-2 md:px-4 w-full h-full relative">
+          <div className="mx-auto aspect-video overflow-hidden rounded-xl object-bottom sm:w-full lg:order-last relative lg:aspect-square bg-gray-400 h-full">
+            <div className="relative w-full h-full">
+              <Image
+                src="/assets/Imgs/Sharp/sharpBg.jpg"
+                alt="صيانة شارب"
+                layout="fill"
+                objectFit="cover"
+                className="w-[100%] h-[100%]"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col justify-center space-y-4 absolute top-[50%] w-[100%] text-center">
+            <div className="space-y-2">
+              <Typography
+                variant="h1"
+                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl"
+              >
+                {t("main_title")}
+              </Typography>
+              <Typography
+                variant="p"
+                className="max-w-[600px] text-muted-foreground md:text-xl"
+              >
+                {t("main_description")}
+              </Typography>
+            </div>
+            <div className="flex flex-col justify-center gap-2 sm:flex-row">
+              <Button
+                variant="contained"
+                color="success"
+                startIcon={<LocalPhoneIcon className="mx-2" />}
+                component="a"
+                href={`tel:${phoneNumber}`}
+              >
+                {t("call_us")}
+              </Button>
+              <Button
+                variant="outlined"
+                startIcon={<WhatsApp className="text-green-500 mx-2" />}
+                component="a"
+                href={`https://wa.me/${phoneNumber}`}
+              >
+                {t("whatsapp")}
+              </Button>
+            </div>
+          </div>
         </div>
+      </section>
+      <main className="bg-gray-50 py-16 md:py-24">
+        <Container maxWidth="lg">
+          <Typography
+            variant="h1"
+            component="h1"
+            className="text-4xl font-bold text-center mb-8"
+          >
+            صيانة أعطال شارب فى مصر
+          </Typography>
 
-        {/* Introduction */}
-        <section>
-          <h2>أفضل خدمات صيانة شارب في مصر</h2>
-          <p style={{ textAlign: "right" }}>
-            هل تواجه مشاكل في أجهزة شارب المنزلية مثل الشاشات، الثلاجات، أو
-            التكييفات؟ العربى جروب يقدم لكم أفضل خدمات الصيانة والدعم الفني في
-            مصر لضمان عمل أجهزتكم بكفاءة عالية.
-          </p>
-        </section>
+          <Box className="bg-white shadow-lg rounded-lg p-8 mb-8">
+            <Typography variant="h2" className="text-2xl font-semibold mb-4">
+              أفضل خدمات صيانة شارب في مصر
+            </Typography>
+            <Typography variant="body1" className="text-right mb-4">
+              نقدم خدمات صيانة متميزة لجميع أجهزة شارب، بما في ذلك الثلاجات
+              والتكييفات والغسالات. فريقنا من الخبراء مستعد لحل جميع مشاكل
+              أجهزتكم بكفاءة عالية.
+            </Typography>
+          </Box>
 
-        {/* Service Details */}
-        <section>
-          <h2>كيف نقدم خدمات صيانة شارب؟</h2>
-          <p style={{ textAlign: "right" }}>
-            نقدم خدمات صيانة لجميع منتجات شارب بما في ذلك أجهزة التبريد،
-            التدفئة، الأجهزة الإلكترونية، وغيرها. تواصلوا معنا لحجز موعد الصيانة
-            أو لمعرفة المزيد عن خدماتنا.
-          </p>
-        </section>
+          <Box className="bg-white shadow-lg rounded-lg p-8 mb-8">
+            <Typography variant="h2" className="text-2xl font-semibold mb-4">
+              خدماتنا
+            </Typography>
+            <List>
+              <ListItem>
+                <ListItemText
+                  primary="صيانة شارب ثلاجات"
+                  secondary="إصلاح جميع أنواع الأعطال في ثلاجات شارب"
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemText
+                  primary="صيانة شارب تكييف"
+                  secondary="صيانة وإصلاح تكييفات شارب بجميع أنواعها"
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemText
+                  primary="صيانة شارب غسالات"
+                  secondary="حلول متكاملة لجميع مشاكل غسالات شارب"
+                />
+              </ListItem>
+            </List>
+          </Box>
 
-        {/* Contact Information */}
-        <section>
-          <h2>تواصل مع خدمة عملاء شارب</h2>
-          <p style={{ textAlign: "right" }}>
-            - <strong>رقم التليفون أو الخط الساخن لصيانة أجهزة شارب:</strong>{" "}
-            19319
-          </p>
-          <p style={{ textAlign: "right" }}>
-            - <strong>البريد الإلكتروني:</strong>{" "}
-            <a tabIndex="0" href="mailto:Contactus@elarabygroup.com">
-              Contactus@elarabygroup.com
-            </a>
-          </p>
-          <p style={{ textAlign: "right" }}>
-            -{" "}
-            <a
-              href="https://www.elarabygroup.com/ar/contact"
-              target="_blank"
-              rel="noopener"
-            >
-              هنا
-            </a>{" "}
-            لترك رسالتك.
-          </p>
-          <p style={{ textAlign: "right" }}>
-            -{" "}
-            <a
-              href="https://www.elarabygroup.com/ar/service-centers"
-              target="_blank"
-              rel="noopener"
-            >
-              مراكز خدمة صيانة العربى
-            </a>
-          </p>
-        </section>
-
-        {/* FAQ Section */}
-        <section>
-          <h2>الأسئلة الشائعة حول صيانة شارب</h2>
-          <h3>كيف أحجز موعد للصيانة؟</h3>
-          <p style={{ textAlign: "right" }}>
-            يمكنكم حجز موعد الصيانة عن طريق الاتصال بنا على الرقم 19319 أو من
-            خلال البريد الإلكتروني المذكور أعلاه.
-          </p>
-          <h3>هل تقدمون قطع غيار أصلية لأجهزة شارب؟</h3>
-          <p style={{ textAlign: "right" }}>
-            نعم، نحن نقدم قطع غيار أصلية لجميع منتجات شارب لضمان أداء طويل الأمد
-            للأجهزة.
-          </p>
-        </section>
-
-        {/* Footer with Additional Information */}
-        <section>
-          <h2>معلومات إضافية حول صيانة شارب</h2>
-          <p style={{ textAlign: "right" }}>
-            تعرف على{" "}
-            <a
-              href="https://www.elarabygroup.com/ar/service-centers"
-              target="_blank"
-              rel="noopener"
-            >
-              مراكز خدمة صيانة العربى
-            </a>{" "}
-            في جميع أنحاء مصر.
-          </p>
-          <p style={{ textAlign: "right" }}>
-            احصل على الدعم الفني والمشورة عبر موقعنا الرسمي أو تواصل مع خدمة
-            العملاء لتسجيل الشكاوى أو الاستفسارات.
-          </p>
-        </section>
+          <Box className="bg-white shadow-lg rounded-lg p-8">
+            <Typography variant="h2" className="text-2xl font-semibold mb-4">
+              تواصل معنا
+            </Typography>
+            <Typography variant="body1" className="mb-2">
+              رقم الخط الساخن:{" "}
+              <a
+                href={`tel:+201102941029`}
+                title={"رقم صيانة شارب"}
+                className="text-blue-600 hover:underline"
+              >
+                19319
+              </a>
+            </Typography>
+            <Typography variant="body1" className="mb-2">
+              البريد الإلكتروني:{" "}
+              <a
+                href="mailto:ahmednasserr86@gmail.com"
+                className="text-blue-600 hover:underline"
+              >
+                Contactus@elarabygroup.com
+              </a>
+            </Typography>
+          </Box>
+        </Container>
       </main>
     </>
   );
