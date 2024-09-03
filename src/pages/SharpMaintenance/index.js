@@ -33,6 +33,12 @@ const SharpMaintenance = () => {
           name="keywords"
           content="صيانة شارب, صيانة ثلاجات شارب, صيانة تكييف شارب, صيانة غسالات شارب, رقم صيانة شارب"
         />
+        <link
+          rel="icon"
+          type="image/svg+xml"
+          href="/assets/Imgs/Sharp/logoSharp.png"
+          width="30"
+        />
       </Head>
 
       <Navbar
