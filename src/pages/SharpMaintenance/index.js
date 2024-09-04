@@ -14,13 +14,12 @@ import { LocalPhone as LocalPhoneIcon, WhatsApp } from "@mui/icons-material";
 import Navbar from "@/components/Navbar";
 import arValues from "../../../public/locales/ar/translation.json";
 
-const t = (key) => {
-  return arValues[key] || key; // Return the Arabic value or the key if not found
-};
+const t = (key) => arValues[key] || key;
 
 const SharpMaintenance = () => {
   const phoneNumber = "+201102941029";
   const displayPhoneNumber = "01102941029";
+
   return (
     <>
       <Head>
@@ -37,7 +36,6 @@ const SharpMaintenance = () => {
           rel="icon"
           type="image/svg+xml"
           href="/assets/Imgs/Sharp/logoSharp.png"
-          width="30"
         />
       </Head>
 
@@ -47,41 +45,40 @@ const SharpMaintenance = () => {
         PhoneNmberTitle="رقم صيانة شارب"
         whatsAppTitle="هاتف صيانة شارب"
       />
+
       <section className="w-full py-16 md:pt-10 md:pb-6 lg:pt-16 lg:pb-8 h-screen">
-        <div className="container mx-auto px-2 md:px-4 w-full h-full relative">
-          <div className="mx-auto aspect-video overflow-hidden rounded-xl object-bottom sm:w-full w-[100%] lg:order-last relative lg:aspect-square bg-gray-400 h-full">
-            <div className="relative w-full h-full">
-              <Image
-                src="/assets/Imgs/Sharp/sharpBg.jpg"
-                alt="صيانة شارب"
-                layout="fill"
-                className="w-[100%] h-[100%]"
-              />
-              <div className="absolute top-0 left-0 right-0 bottom-0 w-[100%] h-[100%] bg-[#0003]"></div>
-            </div>
-          </div>
-          <div className="flex flex-col justify-center space-y-4 absolute top-[50%] w-[100%] text-center text-white">
-            <div className="space-y-2">
-              <Typography
-                variant="h1"
-                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl"
-              >
-                صيانة أعطال شارب فى مصر
-              </Typography>
-              <Typography
-                variant="p"
-                className="max-w-[600px] text-muted-foreground md:text-xl"
-              >
-                نقدم خدمات صيانة متميزة لجميع أجهزة شارب، بما في ذلك الثلاجات
-                والتكييفات والغسالات. فريقنا من الخبراء مستعد لحل جميع مشاكل
-                أجهزتكم بكفاءة عالية.
-              </Typography>
-            </div>
-            <div className="flex flex-col justify-center gap-2 sm:flex-row">
+        <Container className="relative mx-auto h-full">
+          <Box className="relative w-full h-full mx-auto aspect-video overflow-hidden rounded-xl lg:aspect-square bg-gray-400">
+            <Image
+              src="/assets/Imgs/Sharp/sharpBg.jpg"
+              alt="صيانة شارب"
+              layout="fill"
+              className="object-cover"
+            />
+            <Box className="absolute inset-0 bg-[#0003]" />
+          </Box>
+
+          <Box className="absolute inset-0 flex flex-col items-center justify-center text-center text-white space-y-4">
+            <Typography
+              variant="h1"
+              className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl"
+              style={{ letterSpacing: "2px" }}
+            >
+              صيانة أعطال شارب فى مصر
+            </Typography>
+            <Typography
+              variant="body1"
+              className="text-muted-foreground md:text-xl"
+            >
+              نقدم خدمات صيانة متميزة لجميع أجهزة شارب، بما في ذلك الثلاجات
+              والتكييفات والغسالات. فريقنا من الخبراء مستعد لحل جميع مشاكل
+              أجهزتكم بكفاءة عالية.
+            </Typography>
+            <Box className="flex flex-col justify-center gap-2 sm:flex-row">
               <Button
                 variant="contained"
                 color="success"
-                startIcon={<LocalPhoneIcon className="mx-2" />}
+                startIcon={<LocalPhoneIcon />}
                 component="a"
                 href={`tel:${phoneNumber}`}
               >
@@ -89,16 +86,81 @@ const SharpMaintenance = () => {
               </Button>
               <Button
                 variant="outlined"
-                startIcon={<WhatsApp className="text-green-500 mx-2" />}
+                startIcon={<WhatsApp className="text-green-500" />}
                 component="a"
                 href={`https://wa.me/${phoneNumber}`}
               >
                 {t("whatsapp")}
               </Button>
-            </div>
-          </div>
-        </div>
+            </Box>
+          </Box>
+        </Container>
       </section>
+
+      <section className="bg-white shadow-lg rounded-lg p-8 mb-8 w-[90%] mx-auto">
+        <Container className="grid max-w-7xl mx-auto gap-y-16 lg:grid-cols-2 lg:gap-x-8 lg:items-start my-3">
+          <Box className="lg:pr-4">
+            <Box className="lg:max-w-lg">
+              <Typography
+                variant="h6"
+                color="primary"
+                className="font-semibold"
+              >
+                صيانة شارب
+              </Typography>
+              <Typography
+                variant="h2"
+                className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+              >
+                خدمة عملاء شارب
+              </Typography>
+              <Typography
+                variant="body1"
+                className="mt-6 text-xl text-gray-700"
+              >
+                خدمة عملاء شارب متوفرة على مدار 24 ساعة لتلقي بلاغات الأعطال
+                ولتقديم خدمة متميزة لصيانة تكييف شارب بالضمان المعتمد.
+              </Typography>
+              <List className="mt-6 text-xl text-gray-700 list-disc list-inside">
+                <ListItem>توفير قطع غيار أصلية بضمان لمدة 12 شهر.</ListItem>
+                <ListItem>
+                  أسعار تنافسية وخصم 20% على قطع الغيار الأصلية.
+                </ListItem>
+                <ListItem>
+                  خدمات فورية لتركيب وصيانة تكييفات شارب بالضمان المعتمد.
+                </ListItem>
+              </List>
+              <Typography
+                variant="body1"
+                className="mt-6 text-xl text-gray-700"
+              >
+                رقم توكيل صيانة شارب العربي 01062000763 الخط الساخن المباشر.
+              </Typography>
+            </Box>
+          </Box>
+
+          <Box className="lg:pr-4 lg:max-w-lg">
+            <Typography
+              variant="body1"
+              className="text-base leading-7 text-gray-700"
+            >
+              <strong>الخدمات:</strong>
+            </Typography>
+            <List className="mt-4 text-xl text-gray-700 list-disc list-inside">
+              <ListItem>صيانة تكييف شارب</ListItem>
+              <ListItem>صيانة ثلاجات شارب | اتصل بنا الآن 01062000763</ListItem>
+              <ListItem>صيانة غسالات شارب | اتصل الآن 01062000763</ListItem>
+              <ListItem>صيانة شاشات شارب | اتصل الآن 01062000763</ListItem>
+              <ListItem>عيوب شاشات شارب | اتصل بنا الآن 01062000763</ListItem>
+            </List>
+            <Typography variant="body1" className="mt-4 text-xl text-gray-700">
+              للحصول على المزيد من المعلومات حول الخدمات المقدمة، يمكنك الاتصال
+              بأرقام صيانة شارب الموجودة في المقال.
+            </Typography>
+          </Box>
+        </Container>
+      </section>
+
       <main className="bg-gray-50 py-16 md:py-24">
         <Container maxWidth="lg">
           <Typography
@@ -161,12 +223,13 @@ const SharpMaintenance = () => {
               </a>
             </Typography>
             <Typography variant="body1" className="mb-2">
-              البريد الإلكتروني:{" "}
+              رقم صيانة شارب:{" "}
               <a
-                href="mailto:ahmednasserr86@gmail.com"
+                href={`tel:+201102941029`}
+                title={"رقم صيانة شارب"}
                 className="text-blue-600 hover:underline"
               >
-                Contactus@elarabygroup.com
+                {displayPhoneNumber}
               </a>
             </Typography>
           </Box>
