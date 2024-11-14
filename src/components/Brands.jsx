@@ -9,7 +9,7 @@ import UnionaireLogo from "../../public/assets/Imgs/BrandsLogo/Unionaire.png";
 import CarrierLogo from "../../public/assets/Imgs/BrandsLogo/Carrier.png";
 import BekoLogo from "../../public/assets/Imgs/BrandsLogo/Beko.png";
 import HooverLogo from "../../public/assets/Imgs/BrandsLogo/Hoover.png";
-  
+
 export var brandData = [
   {
     name: "Toshiba",
@@ -40,8 +40,9 @@ export var brandData = [
     logo: BoschLogo,
   },
   {
-    name: "Sharp",
+    name: "صيانة أعطال شارب فى مصر",
     logo: SharpLogo,
+    href: "https://sharp-maintenance.vercel.app/",
   },
   {
     name: "Ariston",
