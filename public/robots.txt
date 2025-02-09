@@ -1,5 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
 
-Sitemap: https://sal7lyy.vercel.app/sitemap.xml
+Sitemap: https://sharp-maintenance.vercel.app/sitemap.xml

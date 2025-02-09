@@ -15,6 +15,11 @@ import Navbar from "@/components/Navbar";
 import arValues from "../../../public/locales/ar/translation.json";
 
 const t = (key) => arValues[key] || key;
+export async function getStaticProps() {
+  return {
+    props: {},
+  };
+}
 
 const SharpMaintenance = () => {
   const phoneNumber = "+201102941029";
@@ -24,6 +29,10 @@ const SharpMaintenance = () => {
     <>
       <Head>
         <title>صيانة شارب - خدمات الصيانة الموثوقة لأجهزة شارب في مصر</title>
+        <link
+          rel="canonical"
+          href="https://sharp-maintenance.vercel.app/SharpMaintenance"
+        />
         <meta
           name="description"
           content="خدمات صيانة موثوقة لجميع أجهزة شارب في مصر. نقدم صيانة للثلاجات والتكييفات والغسالات بأيدي خبراء متخصصين. اتصل بنا على 01102941029."
